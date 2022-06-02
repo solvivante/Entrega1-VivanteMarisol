@@ -1,0 +1,45 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'app_turnos/assets/img/index.jpg' %}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Alta de Entrenador</h2>
+                    
+                    <form action="alta_profesionales" method="POST">
+                        {% csrf_token %}
+                   
+                    <h6 class="post-subtitle">Nombre:</h6>
+                    <p class="post-meta">
+                        <input type="text" name="nombre" required>
+                    </p>
+                    <h6 class="post-subtitle">Telefono:</h6>
+                    <p class="post-meta">
+                        <input type="number" name="telefono" required>
+                    </p>
+                    <h6 class="post-subtitle">Turno:</h6>
+                    <p class="post-meta">
+                       <input type="text" name="turno" required>
+                        
+                    </p>
+                
+                    <input type="submit" value="Enviar">
+                
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+{% endblock %} 
+                

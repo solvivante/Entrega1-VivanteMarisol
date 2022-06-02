@@ -1,0 +1,49 @@
+{% extends "padre.html" %}
+
+{%  load static %}
+
+
+{% block contenido %}
+    
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'app_turnos/assets/img/index.jpg' %}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Clientes</h2>
+                    
+                    {% for cliente in datos %}
+                    
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">N°</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">E-mail</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row">{{cliente.id}}</th>
+                                  <td>{{cliente.nombre}}</td>
+                                  <td>{{cliente.dni}}</td>
+                                  <td>{{cliente.telefono}}</td>
+                                  <td>{{cliente.domicilio}}</td>
+                                  <td>{{cliente.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>                            
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+{% endblock %}  

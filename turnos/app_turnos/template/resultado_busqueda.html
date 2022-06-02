@@ -1,0 +1,46 @@
+{% extends "padre.html" %}
+{%  load static %}
+
+
+{% block contenido %}
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'app_turnos/assets/img/index.jpg' %}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Buscar Turnos</h2>
+                    
+                    {% if turno %}
+                       
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Nombre:</th>
+                            <th scope="col">Domicilio</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        {% for turno in turno %}
+                        <tr>
+                          <th scope="row">{{turno.nombre}}</th>
+                          <th scope="row"> {{turno.domicilio}}</th>
+                         </tr>
+                    {% endfor %}
+                    
+                    {% else %}
+                    <tr> <th scope="row">No se encontraron turnos</th>
+                    {% endif %}
+                    </tr>
+                    </tbody>
+                </table>      
+            </div>
+        </div>
+    </div>
+</div>
+</section> 
+{% endblock %} 
+                          
